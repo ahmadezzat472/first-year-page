@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh0-Q6</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //6) Write a C program that prompts the user to input three integer values and find the greatest value
+                //of those three values.
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int a,b,c;
+                    printf("enter three integer values: ");
+                    scanf("%d%d%d",&a,&b,&c);
+                    if( a==b && a==c)
+                        printf("the three values are equal");
+                    else
+                    {
+                        if( a>b && a>c)
+                            printf("greatest value of those three values is %d",a);
+                        else
+                        {
+                            if( b>a && b>c)
+                                printf("greatest value of those three values is %d",b);
+                            else
+                                printf("greatest value of those three values is %d",c);
+                        }
+                    }
+                }
+
+                //---------------------------------------------------------------------------------------------------
+
+                //7) Write a program that determines a student’s grade. The program will read three scores and determine the grade based 
+                //on the following rules:
+                // ● if the average score >= 90% => grade = A  ● if the average score >= 70% and < 90% => grade = B 
+                //● if the average score >= 50% and < 70% => grade = C
+                //● if the average score < 50% => grade = F
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int m1,m2,m3; float av;
+                    printf("enter three scores from 1 to 100: ");
+                    scanf("%d%d%d",&m1,&m2,&m3);
+                    av=((m1+m2+m3)*100)/300;
+                    if(av>=90)
+                        printf("grade = A\n");
+                    else
+                    {
+                        if(av>=70 && av&lt;90)
+                            printf("grade is B");
+                        else
+                        {
+                            if(av>=50 && av&lt;70)
+                                printf("grade is C");
+                            else
+                            {
+                                if(av&lt;50)
+                                    printf("grade is F");
+                            }
+                        }
+                    }
+                }
+
+                //---------------------------------------------------------------------------------------------------
+
+                //8) Write a C program that finds whether a number is even or odd
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int n;
+                    printf("enter the number of n:");
+                    scanf("%d",&n);
+                    if(n%2==0)
+                        printf("a number is even");
+                    else
+                        printf("a number is odd");
+                }
+
+                //---------------------------------------------------------------------------------------------------
+
+                //9) Write a C program that compares two numbers a and b. The output of this comparison is whether
+                //the two numbers are equal, that a is greater, or that b is greater.
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int a,b;
+                    printf("enter the number of a: ");
+                    scanf("%d",&a);
+                    printf("enter the number of b: ");
+                    scanf("%d",&b);
+                    if(a==b)
+                        printf("the two numbers are equal");
+                    else
+                    {
+                        if(a>b)
+                            printf("that a is greater");
+                        else
+                            printf("that b is greater");
+                    }
+                }
+
+                //---------------------------------------------------------------------------------------------------
+
+                //10) Write a C program that finds the type of a triangle when its three angles are given.
+                //● If all angles are equal, it is an equilateral triangle. ● If any two angles are equal, it is an isosceles triangle. 
+                //● If all angles are different, it is an acute triangle
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int a, b,c;
+                    printf("enter three angles a,b,and c ,but the sum of the three angles = 180:....");
+                    scanf("%d%d%d",&a,&b,&c);
+                    if( a+b+c==180)
+                    {
+                        if(a==b && a==c)
+                            printf("it is an equilateral triangle");
+                        else
+                        {
+                            if(a==b || a==c || b==c)
+                                printf("it is an isosceles triangle");
+                            else
+                                printf("it is an acute triangle");
+                        }
+                    }
+                    else
+                        printf("Re-enter values");
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

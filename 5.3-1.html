@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>5.3-2</title>
+</head>
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                #include <stdio.h>
+                int main()
+                {
+                    int num,x,exponent,shift_left;
+                    //x to determine division or multiplication
+                    //shift left'*' by 2^
+                    //shift right'/' by 2^
+                    printf("num=");
+                    scanf("%d",&num);
+                    printf("Enter '1' to multiplication && '2' to division: ");
+                    scanf("%d",&x);
+                    switch(x)
+                    {
+                        case 1:
+                        printf("exponent=");
+                        scanf("%d",&exponent);
+                        printf("%d*2^%d=%d",num,exponent,num<<exponent);
+                        break;
+                        case 2:
+                        printf("exponent=");
+                        scanf("%d",&exponent);
+                        printf("%d/2^%d=%d",num,exponent,num>>exponent);
+                        break;
+                        default:printf("enter (1 or 2)");	 
+                    }
+
+                    return0;
+                }
+            </code>
+        </pre>
+    </div>
+</body>

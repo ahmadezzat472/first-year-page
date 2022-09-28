@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>7.1-1</title>
+</head>
+
+<body>
+  <div class="container">
+      <pre>
+          <code>
+                  include <stdio.h>
+                  int main()
+                  {
+                  
+                    //for loop
+                    /*
+                    int grade,counter=1;
+                    for(;counter<=20;counter++)
+                    {
+                        printf("student grade\"%d\"=",counter);
+                        scanf("%d",&grade);
+                        if(grade>=60&&grade<=100)
+                        printf("passed\n");
+                        else if(grade>100)
+                        printf("enter real grade");
+                    }*/
+                    
+                    //while loop
+                    
+                    int grade,counter=1;
+                    while(counter<=20)
+                    {
+                      printf("student grade\"%d\"=",counter);
+                      scanf("%d",&grade);
+                      if(grade>=60&&grade<=100)
+                      printf("passed\n");
+                      else if(grade>100)
+                      printf("enter real grade\n");
+                      counter++;
+                    }
+                    
+                    return 0;
+                  }
+        </code>
+    </pre>
+  </div>
+</body>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>10.4-2</title>
+</head>
+
+<body>
+  <div class="container">
+      <pre>
+          <code>
+                    #include<stdio.h>
+                    int main()
+                    {
+                      int x,a,i;
+                      printf("x=");
+                      scanf("%d",&x);
+                      if(x<0)
+                      {
+                        printf("Take care the number will read from fwon to up\n");
+                        printf("take care the combleat bits its one's\n");
+                        x*=-1;
+                        x-=1;
+                        a=x;
+                        for(;a>=1;)
+                        {
+                          i=a%2;
+                          a/=2;
+                          if(i==0)
+                            printf("1\n");
+                          else 
+                            printf("0\n");
+                        }
+                      }
+                      else{
+                        a=x;
+                        for(;a>=1;)
+                        {
+                          i=a%2;
+                          a/=2;
+                          printf("%d\n",i);
+                        }
+                      }	
+                        return 0;
+                    }
+        </code>
+    </pre>
+  </div>
+</body>

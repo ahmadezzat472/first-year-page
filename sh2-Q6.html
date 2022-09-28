@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh2-Q6</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+
+                //6) Write a C program to read a matrix from the user, and then display the row with the maximum
+                //total/sum (that is, the row whose sum of elements is maximum).
+                #include&lt;stdio.h>
+
+                //solution 1
+
+                int main()
+                {
+                    int rows,columns;
+                    int arr[10][10];
+                    printf("enter the number of rows of a matrix (max.10): ");
+                    scanf("%d",&rows);
+                    printf("enter the number of columns of a matrix (max.10): ");
+                    scanf("%d",&columns);
+                    for(int i=0 ; i&lt;rows ; i++)
+                    {
+                        for(int j=0;j&lt;columns;j++)
+                        {
+                            printf("enter the number'%d-%d': ",i,j);
+                            scanf("%d",&arr[i][j]);
+                        }
+                    }
+                    int sum=0,z=0,a;
+                    for(int i=0 ; i&lt;rows ; i++)
+                    {
+                        for(int j=0;j&lt;columns;j++)
+                            sum+=arr[i][j];
+                        if(i==0)
+                        {
+                            z=sum;
+                            sum=0;
+                        }
+                        else
+                        {
+                            if(sum>z)
+                            {
+                                a=i;
+                                z=sum;
+                            }
+                            sum=0;
+                        }
+                    }
+                    printf("the row with the maximum total/sum is %d\n",a);
+                    printf("the elements with the row of maximum total/sum is:");
+                    for(int i=0; i&lt;columns ;i++)
+                        printf("%d ",arr[a][i]);
+                }
+
+                //solution 2
+
+                int main()
+                {
+                    int rows,columns;
+                    int sum=0,z=0,a;
+                    int arr[10][10];
+                    printf("enter the number of rows of a matrix (max.10): ");
+                    scanf("%d",&rows);
+                    printf("enter the number of columns of a matrix (max.10): ");
+                    scanf("%d",&columns);
+                    for(int i=0 ; i&lt;rows ; i++)
+                    {
+                        for(int j=0;j&lt;columns;j++)
+                        {
+                            printf("enter the number'%d-%d': ",i,j);
+                            scanf("%d",&arr[i][j]);
+                            sum+=arr[i][j];
+                        }
+                        if(sum>z)
+                        {
+                            a=i;
+                            z=sum;
+                        }
+                        sum=0;
+                    }
+                    printf("the row with the maximum total/sum is %d\n",a);
+                    printf("the elements with the row of maximum total/sum is:");
+                    for(int i=0; i&lt;columns ;i++)
+                        printf("%d ",arr[a][i]);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //7) By using a two-dimensional array, write a C program to display the matrix shown below:
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int a[5][5],n,b;
+                    for(int i=0; i&lt;5 ; i++)
+                    {
+                        for(int j=0; j&lt;5 ; j++)
+                        {
+                            if(i>j)
+                                a[i][j]=-1;
+                            if(i==j)
+                                a[i][j]=0;
+                            if(i&lt;j)
+                                a[i][j]=1;
+                        }
+                    }
+                    for(int i=0; i&lt;5 ; i++)
+                    {
+                        for(int j=0; j&lt;5 ; j++)
+                        {
+                            printf("%2d  ",a[i][j]);
+                        }
+                        printf("\n");
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //8) By using a two-dimensional array, write a C program to display a Pascal triangle of any size. In a
+                Pascal triangle, the first & second rows are set to 1. Each element of the triangle (starting from the
+                third row downwards) is the sum of the element directly above it and the element to the left of the
+                element directly above it. See the following example of a Pascal triangle (with a size = 5):
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int rows,columns;
+                    int arr[20][20];
+                    printf("Enter the size of the Pascal Triangle (max.20): ");
+                    scanf("%d",&rows);
+                    columns=rows;
+                    for(int i=0 ; i&lt;rows ; i++)
+                    {
+                        for(int j=0 ; j&lt;columns ; j++)
+                        {
+                            if(j==0 || i==j)
+                                arr[i][j]=1;
+                            else
+                                arr[i][j]=arr[i-1][j]+arr[i-1][j-1];
+                            if(j>i)
+                                arr[i][j]=' ';
+                        }
+                    }
+
+                    for(int i=0 ; i&lt;rows ; i++)
+                    {
+                        for(int j=0 ; j&lt;columns ; j++)
+                        {
+                            if(j>i)
+                                printf("%c  ",arr[i][j]);
+                            else
+                                printf("%3d  ",arr[i][j]);
+                        }
+                        printf("\n");
+                    }
+                    return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //9) Write a C function that reverses an array in another one.
+                #include&lt;stdio.h>
+                void reverse(int arr[],int size)
+                {
+                    int a[size];
+                    int j=0;
+                    for(int i=0 ; i&lt;size ; i++)
+                    {
+                        a[j]=arr[i];
+                        j++;
+                    }
+
+                    for(int i=0 ; i&lt;size ; i++)
+                    {
+                        printf("%d  ",a[i]);
+                    }
+                }
+                int main()
+                {
+                    int array[]={1,2,3,4,5,6,7,8,9,10};
+                    reverse(array,10);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                <img src="img/Screenshot 2022-03-19 005457.png" alt="">
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

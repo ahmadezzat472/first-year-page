@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>5.1-1</title>
+</head>
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                #include<stdio.h>
+                int main()
+                {
+                    //this programm calculate the quotient ,and remainder
+                    int num_1,num_2;
+                    printf("num_1=");
+                    scanf("%d",&num_1);
+                    printf("num_2=");
+                    scanf("%d",&num_2);
+                    if(num_2!=0)
+                    {//we can not calculate division by zero
+                        printf("quotient=%f\n",num_1/(float)num_2);//(float) to not neglect the fraction
+                        printf("remainder=%d",num_1%num_2);
+                    }
+                    else
+                    printf("un known");
+                    
+                    return 0;
+                }
+            </code>
+        </pre>
+    </div>
+</body>

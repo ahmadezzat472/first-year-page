@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh6-Q11</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //11) [From the textbook "C How to program": 10.21] In this exercise, you’ll design a "starter"
+                //HealthProfile structure for a person. The structure’s members should include: the person’s first
+                //name, last name, gender, date of birth (consisting of separate attributes for the month, day and year
+                //of birth), height, and weight. Your program should have a function that:
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+
+                typedef struct
+                    {
+                        int month,day,year;
+                    }date;
+
+                    typedef struct
+                    {
+                        char first_name[50];
+                        char last_name[50];
+                        char gender[6];
+                        date birth;
+                        int weight;
+                        int height;
+                    }HealthProfile;
+
+                int fun(HealthProfile person,double *bmi)
+                {
+                    *bmi= (double)person.weight / (person.height * person.height);
+                    return (2022 - person.birth.year);
+                }
+
+                int main()
+                {
+                    double bmi;
+                    HealthProfile person;
+
+                    printf("enter first name: ");
+                    scanf("%s",person.first_name);
+
+                    printf("enter last name: ");
+                    scanf("%s",person.last_name);
+
+                    printf("enter your gender: ");
+                    scanf("%s",person.gender);
+
+                    printf("enter your birthday (mm dd yy): ");
+                    scanf("%d%d%d",&person.birth.month,&person.birth.day,&person.birth.year);
+
+                    printf("enter your weight: ");
+                    scanf("%d",&person.weight);
+
+                    printf("enter your height: ");
+                    scanf("%d",&person.height);
+
+                    printf("-----------------------------------\n");
+
+                    printf("the person's first name: %s\n",person.first_name);
+                    printf("the person's last name: %s\n",person.last_name);
+                    printf("the person's gender: %s\n",person.gender);
+                    printf("the person's date of birth: %d %d %d\n",person.birth.month,person.birth.day,person.birth.year);
+                    printf("the person's weight: %d\n",person.weight);
+                    printf("the person's height: %d\n",person.height);
+                    printf("the person's age in years: %d\n",fun(person,&bmi));
+                    printf("and his/her BMI: %lf",bmi);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //12) Trace the following:
+                a)	Output =>   a is 4
+                                b is 3
+                                s1 is I should print second
+                                s2 is I should print first
+
+                b)	Output =>   This is the function call of 1,
+                                the addition of 0 and 5 is5.
+
+                                This is the function call of 2,
+                                the addition of 1 and 4 is5.
+
+                                This is the function call of 3,
+                                the addition of 2 and 3 is5.
+
+                                This is the function call of 4,
+                                the addition of 3 and 2 is5.
+
+                                This is the function call of 5,
+                                the addition of 4 and 1 is5.
+
+                //--------------------------------------------------------------------------------------------------
+
+                //13) Show the output of the following program:
+                Output =>    The size of a_union: 8-byte
+                The size of a_struct: 12-byte
+                
+                //--------------------------------------------------------------------------------------------------
+
+                //14) Trace the following program:
+                Output =>       3.500000
+                                a
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

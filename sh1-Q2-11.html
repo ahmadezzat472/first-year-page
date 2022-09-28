@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh1-Q6-11</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+
+                //11) Write a C program that prompts the user to choose an operation to do on 2 input integers. The
+                //operations are addition, subtraction, multiplication, and division. Note: the program should not allow the division by zero.
+                #include&lt;stdio.h>
+                operation();
+                int main()
+                {   int x,y,op;
+                    printf("enter integer number of x:");
+                    scanf("%d",&x);
+                    printf("enter integer number of y:");
+                    scanf("%d",&y);
+                    printf("choose an operation:\n1 to addition\n2 to subtraction\n3 to multiplication\n4 to division\n");
+                    scanf("%d",&op);
+                    if(op==4)
+                    {
+                        if(y==0)
+                        {
+                            printf("the program not allow the division by zero");
+                            return ;
+                        }
+                        else
+                            printf("%d",operation(x,y,op));
+                    }
+                    else
+                        printf("%d",operation(x,y,op));
+                }
+                int operation(int x ,int y, int op)
+                {   switch(op)
+                    {
+                        case 1:
+                            return x+y;
+                            break;
+                        case 2:
+                            return x-y;
+                            break;
+                        case 3:
+                            return x*y;
+                            break;
+                        case 4:
+                            return x/y;
+                            break;
+                        default:
+                            printf("choose from 1 to 4");
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //12) Write a C program that will print the following pattern:
+                #include&lt;stdio.h>
+                char fun();
+                int main()
+                {
+                    int rows,i,k;
+                    scanf("%d",&rows);
+                    for(i=rows ; i>=1 ;i--)
+                    {
+                        for(k=i;k>=1;k--)
+                            printf("%c",fun());
+                        printf("\n");
+                    }
+                }
+                char fun()
+                {
+                    return '*';
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //13) Write a C program that will print the following pattern:
+                #include&lt;stdio.h>
+                char fun()
+                {
+                    return '*';
+                }
+                int main()
+                {
+                    int rows,i,l,s;
+                    printf("enter number of rows:");
+                    scanf("%d",&rows);
+                    s=rows*2;
+                    for(i=1 ; i&lt;=s ;i+=2)
+                    {
+                        for(l=1; l&lt;=i ;l++)
+                            printf("%c",fun());
+                        printf("\n");
+                    }
+
+                    int k,m;
+                    for(k=s;k>=1;k-=2)
+                    {
+                        for(m=k-1;m>=1;m--)
+                            printf("%c",fun());
+                        printf("\n");
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //14) Write a C program that finds the sum of the first n natural numbers
+                #include&lt;stdio.h>
+                int sum(int n)
+                {
+                    int sum=0;
+                    for(int i=1;i&lt;=n;i++)
+                    {
+                        sum+=i;
+                    }
+                    return sum;
+                }
+                int main()
+                {
+                    int n;
+                    printf("enter value of n:");
+                    scanf("%d",&n);
+                    printf("the sum of the first n natural numbers: %d",sum(n));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //15) Write a C code that finds the sum of the digits of a number.
+                #include&lt;stdio.h>
+                int sumofdigits(int n)
+                {   int z,sum=0;
+                    while(n!=0)
+                    {
+                        z=n%10;
+                        sum+=z;
+                        n/=10;
+                    }
+                    return sum;
+                }
+                int main()
+                {
+                    int n;
+                    printf("enter number of n:");
+                    scanf("%d",&n);
+                    printf("the sum of the digits of a number: %d",sumofdigits(n));
+                }
+                
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

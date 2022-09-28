@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh5-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //1) Write a C program that asks the user to enter 10 integers in an array. The program will then 
+                //display (based on the entered numbers) one of the following messages:
+                #include&lt;stdio.h>
+                    void message();
+                    int main()
+                    {
+                        int a[5];
+                        for(int i=0 ; i&lt;5 ; i++)
+                        {
+                            printf("enter the number-%d: ",i+1);
+                            scanf("%d",&a[i]);
+                        }
+                        message(a,5);
+                    }
+                    void message(int *a, int size)
+                    {
+                        int increase=0,decrease=0,notchange=0,indecreasing=0;
+                        int *ptr=a;
+                        for(int i=0 ; i&lt;size-1 ; i++)
+                        {
+                            if(ptr[i+1] > ptr[i])
+                                increase++;
+                            else if(ptr[i+1] &lt; ptr[i])
+                                decrease++;
+                            else if(ptr[i+1] == ptr[i])
+                                notchange++;
+                        }
+                        if(increase==size-1)
+                            printf("the numbers in the array are increasing");
+                        else if(decrease==size-1)
+                            printf("the numbers in the array are decreasing");
+                        else if(notchange==size-1)
+                            printf("the numbers in the array are not changing");
+                        else
+                        {
+                            increase=0,decrease=0,notchange=0;
+                            for(int i=0 ; i&lt;size-1 ; i++)
+                            {
+                                if(ptr[i+1] > ptr[i])
+                                {   increase++;
+                                    indecreasing++;
+                                }
+                                else if(ptr[i+1] &lt; ptr[i])
+                                {   decrease++;
+                                    if(i==0 && decrease==1 )
+                                    {
+                                        printf("the numbers in the array are decreasing and then increasing .");
+                                        return;
+                                    }
+                                    indecreasing++;
+                                }
+                            }
+                            if(increase==indecreasing || decrease==indecreasing)
+                                return;
+                            else
+                                printf("the numbers in the array are increasing and then decreasing.");
+                        }
+                    }
+                    
+                    //--------------------------------------------------------------------------------------------------
+
+                    //2) Trace the following:
+                    A)	Output => [c], [20], [1.200000], [I], [I am a string]
+                    B)	Output =>   2
+                                    9
+                                    10
+                                    10
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

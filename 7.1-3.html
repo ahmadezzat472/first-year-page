@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>7.1-3</title>
+</head>
+
+<body>
+  <div class="container">
+      <pre>
+          <code>
+                  #include <stdio.h>
+                  int main()
+                  {
+                    int grade,counter=1,sum=0,e;
+                    while(counter<=10)
+                    {
+                      printf("student grade\"%d\"=",counter);
+                      scanf("%d",&grade);
+                      if(grade<=100&&grade>=1)
+                      {
+                        sum+=grade;
+                        counter++;
+                        e=1;
+                      }
+                      else
+                      {
+                        e=0;
+                        break;
+                      }
+                    }
+                    if(e==1)
+                      printf("class average=%f",sum/(float)(counter-1));
+                    else
+                      printf("enter real grade");
+
+                    return 0;
+                  }
+          </code>
+      </pre>
+  </div>
+</body>

@@ -1,0 +1,218 @@
+/* start global variable */
+:root {
+    --maincolor: rgb(51 59 65 / 90%);
+    --secondcolor: hsl(174 100% 30% / 90%);
+    --fontcolor : wheat;
+}
+
+/* end global variable */
+/* start global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    text-transform: capitalize;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1f2021;
+    background-image: url(../img/632cbae7648ff.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+/* start header  */
+/* header { */
+    /* background-color: #1f2021;
+    background-image: url(../img/632cbae7648ff.jpg);
+    background-size: cover;
+} */
+
+header .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+header .container section {
+    width: 450px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--maincolor);
+    border-radius: 40px;
+}
+
+@media (max-width: 767px) {
+    header .container section {
+        width: auto;
+    }
+}
+
+header .container h1{
+    width: 200px;
+    height: 90px;
+    background-color: var(--secondcolor);
+    color: white;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+header .container h1::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background-color: var(--maincolor);
+    z-index: -1;
+    transform: skew(10deg, 10deg);
+}
+
+header .container h1::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background-color: var(--secondcolor);
+    z-index: -1;
+    transform: skew(-10deg, -10deg);
+}
+
+header .container .links {
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .container .links a {
+    width: 100px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 25%;
+    background-color: var(--secondcolor);
+    transition: 0.6s;
+}
+
+header .container .links a:hover {
+    transform: scale(1.1);
+    background-color: #01685e;
+}
+
+header .container section .icons a,
+header .container section .icons a i {
+    text-decoration: none;
+    color: var(--fontcolor);
+    transition: 0.6s;
+}
+
+header .container section .icons {
+display: flex;
+justify-content: space-between;
+width: 280px;
+padding: 15px;
+margin: 25px 0;
+}
+
+header .container section .icons a:first-child:hover {
+    transform: scale(1.1);
+    color: var(--secondcolor);
+    border-radius: 5px;
+}
+
+header .container section .icons a:nth-child(2) i:hover {
+    color:#3b5998;
+    transform: scale(1.3);
+}
+
+header .container section .icons a:nth-child(3) i:hover {
+    color:#e5b5ff;
+    transform: scale(1.3);
+}
+
+header .container section .icons a:nth-child(4) i:hover {
+    color:yellow;
+    transform: scale(1.3);
+}
+
+header .container section .icons a:nth-child(5) i:hover {
+    color:#0A66C2;
+    transform: scale(1.3);
+}
+
+header .container section .icons a:nth-child(6) i:hover {
+    color:#ff5722;
+    transform: scale(1.3);
+}
+
+header .container section p {
+    margin-top: 30px;
+    color: var(--fontcolor);
+}
+
+header .container section p span:first-child {
+    color:#9e9e9e;
+}
+
+header .container section p span:last-child {
+    color: var(--secondcolor);
+}
+/* end header  */

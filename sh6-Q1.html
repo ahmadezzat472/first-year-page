@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh6-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+
+                //1) Write a short program that declares an integer variable and initializes its value to 25. Then declare
+                //a pointer to that variable. Print the value by using that pointer.
+
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int a=25;
+                    int *p=&a;
+                    printf("%d",*p);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //2) Write a program similar to the previous one, but instead of an integer, use a string initialized with
+                //your own name
+
+                #include &lt;stdio.h>
+                int main()
+                {
+                    char a[]="ahmed";
+                    char *p=&a;
+                    printf("%s",p);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //3) Write a program that:
+                //• For a trip, prompts the user for the number of driven miles, and the fuel consumption.
+                //• Calls a function with three parameters: (1) the number of miles, (2) the fuel consumption,
+                //and (3) the fuel consumption per mile - which is calculated within the function.
+                //• Prints the fuel consumption per mile – which is calculated within the function.
+
+                #include&lt;stdio.h>
+                void calculated(double miles,double fuel,double *FperM )
+                {
+                    *FperM= fuel/miles ;
+                }
+
+                int main()
+                {
+                    double miles,fuel,FperM;
+                    printf("enter the number of driven miles: ");
+                    scanf("%lf",&miles);
+                    printf("and the fuel consumptio: ");
+                    scanf("%lf",&fuel);
+                    calculated(miles,fuel,&FperM);
+                    printf("the fuel consumption per mile is %.2lf",FperM);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //4) Write a program that reads 5 integers to an array. The integers should then be printed. Use pointer
+                //arithmetic.
+
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int arr[5];
+                    printf("enter the numbers of array: \n");
+                    for(int i=0 ;i&lt;5; i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&arr[i]);
+                    }
+                    for(int i=0 ;i&lt;5; i++)
+                        printf("number#%d is %d\n",i+1,*(arr+i));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //5) Modify the preceding program so that it would calculate the sum of the integers. Use a
+                //pointer variable for the sum.
+
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int arr[5];
+                    int x=0;
+                    int *sum=&x;
+                    for(int i=0;i&lt;5; i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&arr[i]);
+                        *sum= *sum + arr[i];
+                    }
+                    printf("th sum of this number is %d",*sum);
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

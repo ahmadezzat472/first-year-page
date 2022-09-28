@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>9.5-6</title>
+</head>
+
+<body>
+  <div class="container">
+      <pre>
+          <code>
+                    #include <stdio.h>
+                    void get_char(char x);
+                    int main()
+                    {
+                      char b;
+                      printf("x=");
+                      scanf("%c",&b);
+                      get_char(b);
+                      
+                      return 0;
+                    }
+                    void get_char(char x)
+                    {
+                      switch(x)
+                      {
+                        case ('0'): printf("TRUE");break;
+                        case ('1'): printf("TRUE");break;
+                        case ('2'): printf("TRUE");break;
+                        case ('3'): printf("TRUE");break;
+                        case ('4'): printf("TRUE");break;
+                        case ('5'): printf("TRUE");break;
+                        case ('6'): printf("TRUE");break;
+                        case ('7'): printf("TRUE");break;
+                        case ('8'): printf("TRUE");break;
+                        case ('9'): printf("TRUE");break;
+                        default:printf("FALSE");
+                      }
+                    }
+        </code>
+    </pre>
+  </div>
+</body>

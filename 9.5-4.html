@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>9.5-4</title>
+</head>
+<body>
+  <div class="container">
+      <pre>
+          <code>
+                      #include <stdio.h>
+                      void temp(float lower,float higher,float step);
+
+                      int main()
+                      {
+                        float lower,higher,step;
+                        printf("please enter a lower limit,limit>=0\t\t");
+                        scanf("%f",&lower);
+                        printf("please enter a higher limit,10<limit<=100\t");
+                        scanf("%f",&higher);
+                        printf("please enter a step size,0<step<=10\t\t");
+                        scanf("%f",&step);
+                        printf("celsius\t\tfahrengeit\n");
+                        printf("-------\t\t----------\n");
+                        temp(lower,higher,step);
+
+                        return 0;
+                      }
+                      
+                      void temp(float lower,float higher,float step)
+                      {
+                        if(lower>=0&&higher>10&&higher<=100&&step>0&&step<=10)
+                        {
+                          for(;lower<=higher;lower+=step)
+                          {
+                            printf("%f\t%f\n",lower,lower*1.8+32);
+                          }
+                        }
+                        else
+                          printf("enter real input");	
+                      }
+        </code>
+    </pre>
+  </div>
+</body>

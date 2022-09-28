@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>9.5-7</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                    #include <stdio.h>
+                    int sum(int a,int b);
+                    int subtract(int a,int b);
+                    int multiply(int a,int b);
+                    float divide(float a,float b);
+                    int modulus(int a,int b);
+                    int main()
+                    {
+                      int num_1,num_2,choice,result;
+                      float result_division;
+                      char continu;
+                      printf("MENU:\t1.add\t2.subtract\t3.multiply\t4.divide\t5.modulus\n");
+                      do{
+                        prinf("Enter your choice: ");
+                        scanf("%dt",&choice);
+                        printf("Enter your two numbers:\n");
+                        scanf("%d%d",&num_1,&num_2);
+                        switch(choice){
+                            case 1:
+                                result=sum(num_1,num_2);
+                                printf("result=%d\n",result);
+                                break;
+                            case 2:
+                                result=subtract(num_1,num_2);
+                                printf("result=%d\n",result);
+                                break;
+                            case 3:
+                                result=multiply(num_1,num_2);
+                                printf("result=%d\n",result);
+                                break;
+                            case 4:
+                                if(num_2!=0){
+                                result_division=divide(num_1,num_2);
+                                printf("result=%f\n",result_division);}
+                            else
+                                printf("un known\n");    
+                                break;
+                            case 5:
+                                result=modulus(num_1,num_2);
+                                printf("result=%d\n",result);   
+                                break;
+                            default:
+                                printf("enter {1,2,3,4,5}\n");	    
+                        }
+                        printf("enter y to continue:");
+                        scanf(" %c",&continu);
+                    }while(continu=='y'||continu=='Y');			    
+                        
+                    return 0;
+                    }
+                    
+                    int sum(int a,int b){
+                      return a+b;
+                    }
+                    int subtract(int a,int b){
+                      return a-b;
+                    }
+                    int multiply(int a,int b){
+                      return a*b;
+                    }
+                    float divide(float a,float b){
+                      return a/b;
+                    }
+                    int modulus(int a,int b){
+                      return a%b;
+                    }
+            </code>
+        </pre>
+    </div>
+</body>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh1-Q6-5</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //2) Repeat the problems from 5 to 16 in Sheet#0 using functions, and you should call them from the
+                //main. The functions should return a value to the main and the main is responsible for printing the
+                //output.
+                //--------------------------------------------------------------------------------------------------
+
+
+
+                //5) Write a C program that finds the area of a triangle. Note: a triangle’s area = 0.5 * base * height
+
+                #include&lt;stdio.h>
+                float area();
+                int main()
+                {
+                    int base,height;
+                    printf("enter base and height: ");
+                    scanf("%d%d",&base,&height);
+                    printf("area is %.2f",area(base,height));
+                }
+                float area(int base , int height)
+                {
+                    return 0.5*base*height;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //6) Write a C program that prompts the user to input three integer values and find the greatest value
+                //of those three values.
+                #include&lt;stdio.h>
+                int greatest(int a, int b, int c);
+                int main()
+                {
+                    int a,b,c;
+                    printf("enter three integer values: ");
+                    scanf("%d%d%d",&a,&b,&c);
+                    if( a==b && a==c)
+                        printf("the three values are equal");
+                    else
+                    {
+                        printf("greatest value of those three values is:");
+                        printf("%d",greatest(a,b,c));
+                    }
+                }
+                int greatest(int a, int b, int c)
+                {
+                    if( a>b && a>c)
+                        return a;
+                    else
+                    {
+                        if( b>a && b>c)
+                            return b;
+                        else
+                            return c;
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //7) Write a program that determines a student’s grade. The program will read three scores and determine 
+                //the grade based on the following rules:
+                #include&lt;stdio.h>
+                char determinegrade(float av)
+                {
+                    if(av>=90)
+                        return 'A';
+                    else
+                    {
+                        if(av>=70 && av&lt;90)
+                            return 'B';
+                        else
+                        {
+                            if(av>=50 && av&lt;70)
+                                return 'C';
+                            else
+                            {
+                                if(av&lt;50)
+                                    return 'F';
+                            }
+                        }
+                    }
+                }
+                int main()
+                {
+                    int m1,m2,m3; float av;
+                    printf("enter three scores from 1 to 100: ");
+                    scanf("%d%d%d",&m1,&m2,&m3);
+                    av=((m1+m2+m3)*100)/300;
+                    printf("grade is ");
+                    printf("%c",determinegrade(av));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //8) Write a C program that finds whether a number is even or odd
+                #include&lt;stdio.h>
+                int even_or_odd(int a)
+                {
+                    if(a%2==0)
+                        return 1;
+                    else
+                        return 0;
+                }
+                int main()
+                {
+                    int n,z;
+                    printf("enter the number of n:");
+                    scanf("%d",&n);
+                    z=even_or_odd(n);
+                    if(z==1)
+                        printf("a number is even");
+                    else
+                        printf("a number is odd");
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //9) Write a C program that compares two numbers a and b. The output of this comparison is whether
+                //the two numbers are equal, that a is greater, or that b is greater.
+                #include&lt;stdio.h>
+                int comparison(int a, int b)
+                {   if(a==b)
+                        return 0;
+                    else
+                    {
+                        if(a>b)
+                            return 1;
+                        else
+                            return 2;
+                    }
+                }
+                int main()
+                {
+                    int a,b,z;
+                    printf("enter the number of a: ");
+                    scanf("%d",&a);
+                    printf("enter the number of b: ");
+                    scanf("%d",&b);
+                    z=comparison(a,b);
+                    if(z==0)
+                        printf("the two numbers are equal");
+                    else
+                    {
+                        if(z==1)
+                            printf("that a is greater");
+                        else
+                            printf("that b is greater");
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //10) Write a C program that finds the type of a triangle when its three angles are given.
+                //● If all angles are equal, it is an equilateral triangle. ● If any two angles are equal,
+                //it is an isosceles triangle. ● If all angles are different, it is an acute triangle
+                #include&lt;stdio.h>
+                int type(int a, int b, int c)
+                {   if( a+b+c==180)
+                    {
+                        if(a==b && a==c)
+                            return 0;
+                        else
+                        {
+                            if(a==b || a==c || b==c)
+                                return 1;
+                            else
+                                return 2;
+                        }
+                    }
+                    else
+                        return 3;
+                }
+                int main()
+                {
+                    int a, b,c,z;
+                    printf("enter three angles a,b,and c ,but the sum of the three angles = 180:....");
+                    scanf("%d%d%d",&a,&b,&c);
+                    z=type(a,b,c);
+                    if(z==0)
+                        printf("it is an equilateral triangle");
+                    else
+                    {
+                        if(z==1)
+                            printf("it is an isosceles triangle");
+                        else
+                        {
+                            if(z==2)
+                                printf("it is an acute triangle");
+                            else
+                                printf("Re-enter values");
+                        }
+                    }
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>4.2-2</title>
+</head>
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                #include<stdio.h>
+                #include<math.h>
+                int main()
+                {
+                    /*int num_1,num_2,num_3,num_4,num_5;
+                    float average;
+                    printf("Enter five integers \n");	
+                    scanf("%d%d%d%d%d",&num_1,&num_2,&num_3,&num_4,&num_5);
+                    printf("sum=%d\n",(num_1+num_2+num_3+num_4+num_5));
+                    printf("sum_of_square=%d\n",(num_1*num_1+num_2*num_2+num_3*num_3+num_4*num_4+num_5*num_5));
+                    printf("sum_of_cube=%d\n",(num_1*num_1*num_1+num_2*num_2*num_2+num_3*num_3*num_3+num_4*num_4*num_4+num_5*num_5*num_5));
+                    printf("average=%f",(num_1+num_2+num_3+num_4+num_5)/5.0);*/
+
+                    //--------------------------------------------------
+                    //another solve
+                    int num,i=1,sum=0,sum_of_square=0,sum_of_cube=0;
+                    float average;
+                    for(;i<=5;i++)
+                    {
+                        printf("enter num%d=",i);
+                        scanf("%d",&num);
+                        sum+=num;
+                        sum_of_square+=pow(num,2);
+                        sum_of_cube+=pow(num,3);
+                    }
+                    average=sum/(float)(i-1);
+                    //(i-1) becuase i after loob will=6
+                    //(float) to not neglact fraction in average
+                    printf("sum=%d\nsum_of_square=%d\nsum_of_cube=%d\naverage=%.4f",sum,sum_of_square,sum_of_cube,average);
+                    
+                    return 0;
+                }
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

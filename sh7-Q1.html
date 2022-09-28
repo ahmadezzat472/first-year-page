@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh7-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //1. Write a function that takes an array of integers and tells whether it is sorted or not.
+
+                #include&lt;stdio.h>
+                int searchsorted(const *a , int si)
+                {
+                    if(a[0]&lt;=a[1])
+                    {
+                        for(int i=0; i&lt;si-1 ;i++)
+                        {
+                            if(*(a+i)>*(a+i+1))
+                                return 0;
+                        }
+                        return 1;
+                    }
+                    else if(a[0]>=a[1])
+                    {
+                        for(int i=0; i&lt;si-1 ;i++)
+                        {
+                            if(*(a+i)&lt;*(a+i+1))
+                                return 0;
+                        }
+                        return 1;
+                    }
+                }
+                int main()
+                {
+                    const int size;
+                    int array[100],z;
+                    printf("enter the size of array: ");
+                    scanf("%d",&size);
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&array[i]);
+                    }
+                    z=searchsorted(array,size);
+                    if(z)
+                    {
+                        printf("the array is sorted");
+                    }
+                    else
+                        printf("the array is not sorted");
+                    return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //2. Modify the bubble sort function to check at the end of each pass whether any swaps have
+                //been made. If none has been made, then the data must already be in the proper order, so the function
+                //should terminate. If swaps have been made, then at least one more pass is needed
+
+                #include&lt;stdio.h>
+                int swap(int *a1 ,int *a2)
+                {
+                    int temp=*a1;
+                    *a1=*a2;
+                    *a2=temp;
+                }
+
+                int bubblesort(const *a , int si)
+                {
+                    for(int i=1; i&lt;si ;i++)
+                    {
+                        for(int j=0; j&lt;si-i ;j++)
+                        {
+                            if(*(a+j)>*(a+j+1))
+                                swap(&a[j], &a[j+1]);
+                        }
+                    }
+                }
+
+                int main()
+                {
+                    const int size;
+                    int array[100];
+                    printf("enter the size of array: ");
+                    scanf("%d",&size);
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&array[i]);
+                    }
+                    bubblesort(array,size);
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        printf("the number#%d become %d\n",i+1,array[i]);
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //3. Rewrite the linear search algorithm recursively.
+
+                #include&lt;stdio.h>
+                int linearsearch(const *a , int key , int start , int end)
+                {
+                    int middle=(start+end)/2 ;
+                    if(start>end)
+                        return -1;
+                    if(key==a[middle])
+                        return middle;
+                    if(key&lt;a[middle])
+                        return linearsearch(a,key,start,middle-1);
+                    if(key>a[middle])
+                        return linearsearch(a,key,middle+1,end);
+                }
+
+                int main()
+                {
+                    const int size;
+                    int array[100],key;
+                    printf("enter the size of array: ");
+                    scanf("%d",&size);
+                    printf("enter the sort numbers: \n");
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&array[i]);
+                    }
+                    printf("enter the keysearch: ");
+                    scanf("%d",&key);
+                    if(linearsearch(array,key,0,size-1) ==-1 )
+                        printf("the keysearch notfound");
+                    else
+                        printf("the index of keysrearch in array is %d",linearsearch(array,key,0,size-1)+1);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //4. Create a text-based, menu-driven program that allows the user to choose whether to calculate
+                //the mean, the mode, or the median of an array. The program should then perform the appropriate
+                //calculation and display the result
+
+                #include&lt;stdio.h>
+                float mean(int arr[],int size)
+                {
+                    int sum=0;
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        sum+=arr[i];
+                    }
+                    return sum/(float)size;
+                }
+
+                int mode(int arr[],int size)
+                {
+                    int a=0,b=0,c;
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        for(int j=i; j&lt;size ;j++)
+                        {
+                        if(arr[j]==arr[i])
+                            a++;
+                        }
+                        if(a>b)
+                        {
+                        b=a;
+                        c=arr[i];
+                        }
+                        a=0;
+                    }
+                    return c;
+                }
+
+                int median(int arr[],int start, int end)
+                {
+                    int middle=(start+end)/2;
+                    return arr[middle];
+                }
+
+                int main()
+                {
+                    const int size;
+                    int array[100];
+                    printf("enter the size of array: ");
+                    scanf("%d",&size);
+                    for(int i=0; i&lt;size ;i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&array[i]);
+                    }
+                    printf("the mean = %.3f\n",mean(array,size));
+                    printf("the mode = %d\n",mode(array,size));
+                    printf("the median = %d",median(array,0,size-1));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //5. Write a function "replace" which takes a string as a parameter. It should replace all the spaces
+                //in that string by minus signs, and then counts and prints the number of spaces it replaced.
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int replace(char *arr,int lenght)
+                {
+                    int a=0;
+                    for(int i=0; i&lt;lenght; i++)
+                    {
+                        if(*(arr+i)== ' ')
+                        {
+                            *(arr+i)='-';
+                            a++;
+                        }
+                    }
+                    return a;
+                }
+                int main()
+                {
+                    const int size;
+                    char array[100],key;
+                    printf("enter the string: \n");
+                    gets(array);
+                    printf("the number of spaces in array is %d\n",replace(array,strlen(array)));
+                    printf("the string after replace ");
+                    puts(array);
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

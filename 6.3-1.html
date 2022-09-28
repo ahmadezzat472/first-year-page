@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>6.3-1</title>
+</head>
+<body>
+  <div class="container">
+      <pre>
+          <code>
+                    #include <stdio.h>
+                    int main()
+                    {
+                      int salary;
+                      printf("salaru=");
+                      scanf("%d",&salary);
+                      if(salary>0)
+                      {
+                        if(salary<1500)
+                            salary+=200;
+                        else if(salary<3000)
+                            salary-=salary*0.05;
+                        else if(salary<5000)
+                              salary-=salary*0.10;
+                        else 
+                              salary-=salary*.015;
+                        printf("salary=%d",salary);	 		
+                      }
+                      else
+                        printf("Enter real salary!");
+                      
+                      return 0;
+                    }
+          </code>
+      </pre>
+  </div>
+</body>

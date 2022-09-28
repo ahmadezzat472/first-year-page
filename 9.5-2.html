@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>9.5-2</title>
+</head>
+<body>
+    <div class="container">
+    <pre>
+        <code>
+                    #include <stdio.h>
+                    int sum_fun(int x,int y,int z);
+
+                    int main()
+                    {
+                        int num_1,num_2,num_3,sum;
+                        printf("num_1=");
+                        scanf("%d",&num_1);
+                        printf("num_2=");
+                        scanf("%d",&num_2);
+                        printf("num_3=");
+                        scanf("%d",&num_3);
+                        sum=sum_fun(num_1,num_2,num_3);
+                        printf("%d+%d+%d=%d",num_1,num_2,num_3,sum);
+                    
+                        return 0;
+                    }
+                      
+                    int sum_fun(int x,int y,int z)
+                    {
+                        return x+y+z;
+                    }
+        </code>
+    </pre>
+</div>
+</body>

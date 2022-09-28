@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>10.3-3</title>
+</head>
+
+<body>
+    <pre>
+        <code>
+                      #include <stdio.h>
+                      #include <math.h>
+                      #include <stdbool.h>
+                      int main(){
+                        int x,y,z,N,prod=1,i,n,a,sum=0,p=0,e;
+                        long long  int bin=0;
+                        bool continu=true;
+                        
+                        do{
+                          
+                        printf("enter base you will enter:");
+                        scanf("%d",&x);
+                        printf("enter base you want convert to:");
+                        scanf("%d",&y);
+                        
+                        
+                        
+                        
+                        switch(x){
+                          
+                          
+                          
+                          
+                        case 10:
+                          if(y==8){
+                            printf("N=");
+                            scanf("%d",&N);
+                            printf("%o",N);
+                        }
+                          else if(y==16){
+                              printf("N=");
+                            scanf("%d",&N);
+                            printf("%X",N);
+                        }
+                          else if(y==2){
+                            printf("N=");
+                            scanf("%d",&N);
+                            a=N;
+                              if(a<0){
+                                    printf("Take care the number will read from down to up\n");
+                                    printf("take care the combleat bits its one's\n");
+                                  a=-1*a;
+                                  ++a;
+                                  for(;a>0;){
+                                      i=a%2;
+                                      a/=2;
+                                      if(i==0)
+                                            printf("1\n");
+                                        else 
+                                            printf("0\n");
+                          }}
+                              else{
+                                a=N;
+                                for(;a>0;){
+                                        i=a%2;
+                                        bin+=i*prod;
+                                        prod*=10;
+                                        a/=2;
+                          }
+                                    printf("%d",bin);
+                        }	
+                        }
+                            break;
+                        
+                        
+                        
+                        
+                        
+                        case 8:
+                            if(y==10){
+                                printf("N=");
+                                scanf("%o",&N);
+                                printf("%d",N);
+                        }
+                            else if(y==16){
+                                printf("N=");
+                                scanf("%o",&N);
+                                  printf("%X",N);
+                        }
+                            else if(y==2){
+                              printf("Take care the number will read from down to up\n");
+                              printf("N=");
+                              scanf("%d",&N);
+                              a=N;
+                                  while(a!=0){
+                                        i=a%10;
+                                        a/=10;
+                                        if(i==0){printf("000\n");}
+                                        else if(i==1){printf("001\n");}
+                                        else if(i==2){printf("010\n");}
+                                        else if(i==3){printf("011\n");}
+                                        else if(i==4){printf("100\n");}
+                                        else if(i==5){printf("101\n");}
+                                        else if(i==6){printf("110\n");}
+                                        else if(i==7){printf("111\n");}
+                                        else{
+                                              printf("enter octal number!!!!");
+                                              break;
+                      }
+                        }
+                          
+                      }
+                              break;
+                          
+                        
+                        
+                        
+                        case 16:
+                                if(y==10){
+                                    printf("write in lowercase\nN=");
+                                    scanf("%x",&N);
+                                    printf("=%d",N);
+                        }
+                              else if(y==8){
+                                  printf("write in lowercase\nN=");
+                                  scanf("%x",&N);
+                                  printf("%o",N);
+                        } 
+                            else if(y==2){
+                                printf("write in lowercase\nN=");
+                                scanf("%x",&N);
+                                printf("take care the number will read from down to up\n");
+                                a=N;
+                                for(;a>=1;){
+                                      i=a%2;
+                                      a/=2;
+                                      printf("%d\n",i);
+                          }
+                          
+                        }
+                            break;
+                        
+                        
+                        
+                        
+                        case 2:
+                            printf("N=");
+                            scanf("%d",&N);
+                            a=N;
+                            for(;a>0;){
+                              i=a%10;
+                              if(i==1||i==0){
+                              sum+=i*pow(2,p++);
+                              a/=10;
+                              e=1;
+                              }
+                              else{
+                                e=0;
+                                break;
+                              }
+                            }
+                            if(e==1){
+                              if(y==16){
+                                printf("%x",sum);
+                          }
+                              else if(y==10){
+                                printf("%d",sum);
+                          }
+                              else if(y==8){
+                                printf("%o",sum);
+                          }}
+                          else
+                              printf("illegal number!!\nEnter BINARY number!");
+                              
+                              break;
+                          
+                          default:
+                            printf("illegal number!!");
+                          }
+                          printf("\n");
+                          
+                        }while(continu);
+
+                        return 0;
+                      }
+        </code>
+    </pre>
+</body>

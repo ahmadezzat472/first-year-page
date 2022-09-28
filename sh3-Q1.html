@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh3-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //1) Write a C function that concatenates two input strings S1 and S2 in string S1.
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+
+                int main()
+                {
+                    char str1[40],str2[40] ;
+                    printf("enter string1: ");
+                    gets(str1);
+                    printf("enter string2: ");
+                    gets(str2);
+                    printf("%s",strcat(str1,str2));
+                    return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //2) Write a C program that reads 10 characters from the user, and then searches for the position of
+                //the character z.
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+
+                int main()
+                {
+                    char a[10];
+                    printf("enter 10 characterss : ");
+                    scanf("%s",a);
+
+                    for(int i=0 ; i&lt;10 ; i++)
+                    {
+                        if(a[i]=='z')
+                            printf("the position of the character z : %d\n",i+1);
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //3) Write a C program that reads string S1 and certain letter from the user, then call your own
+                //function that return the number of occurrences of the given character in the given string.
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+
+                int find(char s1[] , int sizeofs1 , char c1)
+                {
+                    int a=0;
+                    for(int i=0 ; i&lt; sizeofs1 ; i++)
+                    {
+                        if(s1[i]==c1)
+                            a++;
+                    }
+                    return a;
+                }
+                int main()
+                {
+                    char s1[30];
+                    char c1;
+                    printf("enter the string : ");
+                    gets(s1);
+                    printf("enter the letter: ");
+                    scanf("%c",&c1);
+                    printf("the number of occurrences of the given character in the given string :%d",find(s1,strlen(s1),c1));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //4) Write a C function that take two strings (array of characters) and return one if the 1st is part of
+                //the 2nd and zero otherwise
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+                find();
+                int main()
+                {
+                    char s1[30],s2[30];
+                    printf("enter string 1 : ");
+                    scanf("%s",s1);
+                    printf("enter string 2 : ");
+                    scanf("%s",s2);
+                    if(strlen(s1)>strlen(s2))
+                        printf("%d",0);
+                    printf("%d",find(s1,strlen(s2),s2));
+                }
+
+                int find(char s1[],int size ,char s2[])
+                {
+                    int counter=0,a=0;
+                    while(s1[a]!='\0')
+                    {
+                        a++;
+                    }
+                for(int i=0 ; i&lt;a ;i++)
+                    {
+                        for(int j=0 ; j&lt;size ;j++)
+                        {
+                            if(s1[i]==s2[j])
+                            {
+                                counter++;
+                                break;
+                            }
+                        }
+                        if(counter==a)
+                            break;
+                    }
+                    if(counter==a)
+                        return 1;
+                    else
+                        return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //5) Write a C code to reverse a string by recursion
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+
+                char reverse(char s[],int size,int count,int a)
+                {
+                    while(count!=-1)
+                    {
+                        if(a==1)
+                            break;
+                        printf("%c",s[count]);
+                        return reverse(s,size,count-1,a+1);
+                    }
+                    if(a==1)
+                        return reverse(s,size,count-1,a+1);
+                }
+
+                int main()
+                {
+                    char s[20];
+                    int i=0;
+                    printf("enter the string: ");
+                    gets(s);
+                    while(s[i]!='\0')
+                    {
+                        i++;
+                    }
+                    reverse(s,20,i,1);
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>6.1-2</title>
+</head>
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                #include <stdio.h>
+                int main()
+                {
+                    int num_1,num_2,reminder_1,reminder_2;
+                    printf("num_1=");
+                    scanf("%d",&num_1);
+                    printf("num_2=");
+                    scanf("%d",&num_2);
+                    reminder_1=num_1%2;
+                    reminder_2=num_2%2;
+                    if(num_1>num_2&&reminder_1==0)
+                        printf("%d",num_1);
+                    else if(num_2>num_1&&reminder_2==0)
+                        printf("%d",num_2);
+
+                    return 0;
+                }
+            </code>
+        </pre>
+    </div>
+</body>

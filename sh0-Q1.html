@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh0-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+
+                //1) Write a C program to print the following line as shown below:
+                #include&lt;stdio.h>
+                int main()
+                {
+                    printf("Welcome!\n");
+                    printf("You are able to test your skill of writing C code here.");
+                    return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+                
+                //2) Write a C program to declare two integer and one float variables, then initialize them to 10, 15,
+                //and 12.6. It then prints these values on the screen.
+                #include&lt;stdio.h>
+                int main()
+
+                {
+                    int a=10 , b=15 ; float c=12.6 ;
+                    printf(" a=%d  b=%d  c=%.1f ", a , b , c);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+                
+                //3) Write a C program to prompt the user (i.e. ask the user) to input 3 integer values and print these
+                //values in the reversed order
+                #include&lt;stdio.h>
+                int main()
+
+                {
+                    int a , b , c ;
+                    printf("please enter 3 integer numbers a , b ,and c :- \n");
+                    scanf("%d%d%d",&a,&b,&c);
+                    printf("these values in the reversed order: %d %d %d ",c,b,a);
+                }
+
+                //---------------------------------------------------------------------------------------------------
+
+                //4) Given the following pseudo code, write a program that executes it.
+                //a. read x  b. read y  c. compute p = x y   d. compute s = x + y   e. total = s2 + p ( s – x ) ( p + y )   f. print total
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int x,y,p,s,total;
+                    printf("enter number of x: ");
+                    scanf("%d",&x);
+                    printf("enter number of y: ");
+                    scanf("%d",&y);
+                    p=x*y;
+                    s=x+y;
+                    total=s*s+p*(s-x)*(p+y);
+                    printf("total is %d",total);
+                }
+
+                //---------------------------------------------------------------------------------------------------
+
+                //5) Write a C program that finds the area of a triangle. Note: a triangle’s area = 0.5 * base * height
+                #include&lt;stdio.h>
+                int main()
+                {
+                    int base,height;
+                    printf("enter base and heihgt: ");
+                    scanf("%d%d",&base,&height);
+                    printf("area is %.2f",0.5*base*height);
+                }
+                
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

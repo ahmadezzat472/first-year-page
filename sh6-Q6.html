@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh6-Q6</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //6) Write a function which takes as arguments: (1) a pointer to an integer array, and (2) the number of
+                //items of the array. The function then finds and return the greatest item. In the main function, the user
+                //should enter 8 numbers to be stored in the array. The function is then called, and the returned
+                //greatest item is printed (in the main function)
+
+                #include&lt;stdio.h>
+                int greatest(int *arr,int size)
+                {
+                    int max=*arr;
+                    for(int i=1;i&lt;size;i++)
+                    {
+                        if(max&lt;*(arr+i))
+                            max=*(arr+i);
+                    }
+                    return max;
+                }
+
+                int main()
+                {
+                    int arr[8];
+                    for(int i=0;i&lt;8; i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&arr[i]);
+                    }
+                    printf("the greatest item is %d",greatest(arr,8));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //7) Write a recursive function that returns the length of a string.
+
+                #include&lt;stdio.h>
+                int length(char *str,int i,int len)
+                {
+                    if(str[i]=='\0')
+                        return len;
+                    else
+                    {
+                        len++;
+                        length(str,i+1,len);
+                    }
+                }
+                int main()
+                {
+                    char str[100];
+                    printf("enter the string: ");
+                    scanf("%s",str);
+                    printf("the length of a string is %d",length(str,0,0));
+                }
+
+
+                int length(char *str,int len)
+                {
+                    if(str[len]=='\0')
+                        return len;
+                    else
+                        return length(str,len+1);
+                }
+                int main()
+                {
+                    char str[100];
+                    printf("enter the string: ");
+                    scanf("%s",str);
+                    printf("the length of a string is %d",length(str,0));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //8) Write a recursive function that returns the number of spaces in a string.
+
+                //solution 1
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int length(char str[],int i,int space)
+                {
+                    if(i&lt;0)
+                        return space;
+                    else
+                    {
+                        if(*(str+i)== ' ')
+                            space++;
+                        return length(str,i-1,space);
+                    }
+                }
+                int main()
+                {
+                    char str[100];
+                    int space=0;
+                    printf("enter the string: ");
+                    gets(str);
+                    int b=strlen(str) - 1;
+                    printf("the number of spaces in a string is %d",length(str,b,space));
+                }
+
+                //solution 2
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int length(char str[],int i,int space)
+                {
+                    if(i==strlen(str))
+                        return space;
+                    else
+                    {
+                        if(*(str+i)== ' ')
+                            space++;
+                        return length(str,i+1,space);
+                    }
+                }
+                int main()
+                {
+                    char str[100];
+                    printf("enter the string: ");
+                    gets(str);
+                    printf("the number of spaces in a string is %d",length(str,0,0));
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //9) Write a recursive function that checks if a string is entirely consisting of digits, or not.
+
+                //solution 1
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int check(char *str,int a,int i,int count)
+                {
+                    if(i==a)
+                        return count;
+                    else
+                    {
+                            if(str[i]>=48 && str[i]&lt;=57)
+                                count++;
+                        return check(str,a,i+1,count);
+                    }
+                }
+                int main()
+                {
+                    char str[100];
+                    printf("enter the string: ");
+                    scanf("%s",str);
+                    int a=strlen(str);
+                    if(check(str,a,0,0))
+                        printf("the string is entirely consisting of digits");
+                    else
+                        printf("the string is entirely not consisting of digits");
+                }
+
+                //solution 2
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int check(char a[],int f,int count);
+                int main()
+                {
+                    int x,count=0,f=1;
+                    char a[1000];
+                    scanf("%s",a);
+                    x=check(a,f,count);
+                    if(x)
+                    printf("consisting of digits");
+                    else
+                    printf(" not consisting of digits");
+                    return 0;
+                }
+                int check(char a[],int f,int count){
+                    if(!(a[f]>'a')||!(a[f]&lt;'z'))
+                    {
+                        if(count==strlen(a))
+                        {
+                                return 1;
+                        }
+                        else
+                        {
+                                check(a,f+1,count+1);
+                        }
+                    }
+                    else
+                    return 0;
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

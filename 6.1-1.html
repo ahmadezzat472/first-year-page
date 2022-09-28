@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>6.1-1</title>
+</head>
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                #include <stdio.h>
+                int main()
+                {
+                    int num,reminder;
+                    printf("num=");
+                    scanf("%d",&num);
+                    if(num>=0)
+                    {
+                        reminder=num%2;
+                        if(reminder==0)
+                            printf("EVEN number");
+                        else
+                            printf("ODD number");
+                    }
+                    else
+                        printf("Enter positive number");
+
+                    return 0;
+                }
+            </code>
+        </pre>
+    </div>
+</body>

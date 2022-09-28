@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh3-Q6</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //6) Write a function ``replace'' which takes a string as a parameter and replaces all spaces in that
+                //string by minus signs and delivers the number of spaces it replaced
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+
+                void replace(char s[],int size)
+                {
+                    int a=0;
+                    for(int i=0; i&lt;size ; i++)
+                    {
+                        if(s[i]==' ')
+                        {
+                            s[i]='-';
+                            a++;
+                        }
+                    }
+                    printf("the number of spaces it replaced: %d\n",a);
+                    printf("string after modify: %s",s);
+                }
+
+                int main()
+                {
+                    char s[20];
+                    printf("enter the string : ");
+                    gets(s);
+                    replace(s,20);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //7) What is the output of these codes?
+                a)	Output => 0 2 1
+                b)	Output => -1, 0, 6, 7, 8, 9
+
+                //--------------------------------------------------------------------------------------------------
+
+                //8) Declare a structure Employee with id_no, salary, birth_date – which is day, month, and year- id
+                //for 5 tasks the employee has. For example the data for an employee may be: id_no = 5, salary =
+                //7500, birth_date = { day= 3, month= 8, year = 1980}, tasks_ids = {1, 3, 4, 9, 12}.
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+                const int size;
+                struct date
+                {
+                        int day,month,year;
+                };
+                struct employement
+                {
+                        int id_no; int salary; int tasks[5];
+                        struct date birth;
+                };
+
+                void inputemployee();
+                void search_returnSalary();
+
+                int main()
+                {
+                    struct employement employees[size];
+                    printf("enter number of employees: ");
+                    scanf("%d",&size);
+                    search_returnSalary(employees,size);
+                }
+
+                void inputemployee(struct employement e[],int size_e)
+                {
+                    for(int i=0 ;i&lt;size_e;i++)
+                    {   printf("enter id_no for employee#%d: ",i+1);
+                        scanf("%d",&e[i].id_no);
+                        printf("enter salary for employee#%d: ",i+1);
+                        scanf("%d",&e[i].salary);
+                        printf("enter birthday(dd mm yy) for employee#%d: ",i+1);
+                        scanf("%d%d%d",&e[i].birth.day,&e[i].birth.month,&e[i].birth.year);
+                        for(int j=0; j&lt;5 ; j++)
+                        {
+                            printf("enter task#%d: ",j+1);
+                            scanf("%d",&e[i].tasks[j]);
+                        }
+                        printf("______________________________\n");
+                    }
+                }
+
+                void search_returnSalary(struct employement e[],int size_e)
+                {
+                    inputemployee(e,size);
+                    int id;
+                    printf("enter the id_no to search it: ");
+                    scanf("%d",&id);
+                    for(int i=0 ;i&lt;size_e;i++)
+                    {
+                        if(id==e[i].id_no)
+                            printf("the salary of emloyee's(%d): %d",id,e[i].salary);
+                    }
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //9) Show the output:
+                Output => The size of a_struct: 16-byte
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh4-Q1</title>
+</head>
+
+<body>&lt;
+    <div class="container">
+        <pre>
+            <code>
+                //1) Write a C program that calculates the maximum, the minimum,and
+                //the average of 10 numbers entered by the user and stored in an array.
+                #include&lt;stdio.h>
+                void calculates(int *a,int size)
+                {
+                    int max= *(a+0) ,min= *a ,sum=0;
+                    for(int i=0 ;i&lt;size; i++)
+                    {
+                        if(*(a+i)>max)
+                            max=*(a+i);
+                        else if(*(a+i)&lt;min)
+                            min=*(a+i);
+                        sum+=*(a+i);
+                    }
+                    printf("the maximum is %d\n",max);
+                    printf("the minimum is %d\n",min);
+                    printf("the average of 10 numbers is %.2f",sum/10.0);
+                }
+
+                int main()
+                {
+                    const size=10;
+                    int a[size];
+                    for(int i=0; i&lt;size ; i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&a[i]);
+                    }
+                    calculates(a,size);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //2) Write a C program that reads 10 characters from the user,
+                // and then searches for the position of the character z.
+                #include &lt;stdio.h>
+                void search_z(char *a, int size)
+                {
+                    for(int i=0 ;i&lt;size; i++)
+                        if(*(a+i)=='z')
+                            printf("the position of the character z is: %d",i+1);
+                }
+
+                int main()
+                {
+                    const size=10;
+                    char a[size];
+                    for(int i=0; i&lt;size ; i++)
+                    {
+                        printf("enter char#%d: ",i+1);
+                        scanf("%s",&a[i]);
+                    }
+                    search_z(a,size);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //3) Write a C function that checks if an array is in an ascending order
+                #include&lt;stdio.h>
+                void checks(int a[],int size)
+                {
+                    int *aptr=a, counter=0;
+
+                    for(int i=0; i&lt;size-1 ; i++)
+                    {
+                        if( aptr[i+1] > *(aptr+i) )
+                            counter++;
+                    }
+                    if(counter==size-1)
+                        printf("an array is in an ascending");
+                    else
+                        printf("an array is in an not ascending");
+                }
+
+                int main()
+                {
+                    const size;
+                    printf("enter the number(size) of array: ");
+                    scanf("%d",&size);
+                    int a[size];
+                    for(int i=0; i&lt;size ; i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&a[i]);
+                    }
+                    checks(a,size);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //4) Write a C program that reads 10 integer numbers from the user, and then the program
+                // shouldcalculate the sum of the odd numbers, and the sum of the even numbers.
+                #include&lt;stdio.h>
+                void sum(int a[],int size)
+                {
+                    int *aptr=a;
+                    int sum_e=0, sum_o=0;
+                    for(int i=0;i&lt;size;i++)
+                    {
+                        if(aptr[i]%2==0)
+                            sum_e+=*(aptr+i);
+                        else if(aptr[i]%2!=0)
+                            sum_o+=*(aptr+i);
+                    }
+                    printf("the sum of the odd numbers is: %d",sum_o);
+                    printf("the sum of the even numbers is: %d",sum_e);
+                }
+
+                int main()
+                {
+                    const size=10;
+                    int a[size];
+                    for(int i=0; i&lt;size ; i++)
+                    {
+                        printf("enter number#%d: ",i+1);
+                        scanf("%d",&a[i]);
+                    }
+                    sum(a,size);
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

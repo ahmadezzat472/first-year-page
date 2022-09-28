@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>12-6</title>
+</head>
+<body>
+  <div class="container">
+    <pre>
+        <code>
+                  #include<stdio.h>
+                  int permutation(int n,int r);
+                  int main(){
+                    int n,r,p,c,f=1,y;
+                    printf("n=");
+                    scanf("%d",&n);
+                    printf("r=");
+                    scanf("%d",&r);
+                    p=permutation(n,r);
+                    if(p==0)
+                    printf("math error");
+                    else{
+                    printf("P(%d,%d)=%d\n",n,r,p);
+                      y=r;
+                    for(;y>1;y--){
+                      f*=y;
+                    }
+                    printf("C(%d,%d)=%d",n,r,p/f);}
+                    
+                    
+                    
+                    
+                    return 0;
+                  }
+                  int permutation(int n,int r){
+                    int permutation,x,y,f=1,z=1;
+                    if(r>=0&&r<=n){
+                      x=n;
+                      y=(n-r);
+                      for(;x>1;x--){
+                        f*=x;
+                      }
+                      for(;y>1;y--){
+                        z*=y;
+                      }
+                    return f/z;
+                    }
+                    else
+                    return 0;	
+                    
+                  }
+        </code>
+    </pre>
+  </div>
+</body>

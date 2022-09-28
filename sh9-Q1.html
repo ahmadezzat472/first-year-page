@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh9-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //1) Write a function that takes as an argument a pointer to a text file, and returns the number of
+                //characters in that file.
+
+                #include&lt;stdio.h>
+                #include&lt;stdlib.h>
+                #include&lt;string.h>
+                int main()
+                {
+                    char str[100];
+                    FILE *file;
+                    if((file=fopen("d:\\text\\file.txt","r")) != NULL)
+                    {
+                        //fgets(str,100,file);
+                        fscanf(file,"%s",str);
+                        fclose(file);
+                        printf("the number of characters in that file = %d\n",strlen(str));
+                    }
+                    else
+                        printf(" File does not found or error in opening");
+                    return 0;
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh8-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //1) Write a program to compare the contents of two files specified by the user, displaying a message
+                //indicating whether the files are identical or different.
+
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+                int main()
+                {
+                    int a1,b1,a2,b2;
+                    FILE *file1,*file2;
+                    printf("enter the data of file1: ");
+                    scanf("%d",&a1);
+                    printf("enter the data of file2: ");
+                    scanf("%d",&b1);
+                    if((file1=fopen("d:\\text\\file1","w")) != NULL && (file2=fopen("d:\\text\\file2","w")) !=NULL)
+                    {
+                        fprintf(file1, "%d",a1);
+                        fprintf(file2, "%d",b1);
+                        fclose(file1);
+                        fclose(file2);
+                    }
+                    if((file1=fopen("d:\\text\\file1","r")) != NULL && (file2=fopen("d:\\text\\file2","r")) !=NULL)
+                    {
+                        fscanf(file1, "%d",&a2);
+                        fscanf(file2, "%d",&b2);
+                        if(a2 == b2)
+                            printf("the files are identical");
+                        else
+                            printf("the files are different");
+                        fclose(file1);
+                        fclose(file2);
+                    }
+                    return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //2) Create a program to extract (only) the alphabetic characters contained in a binary file, and dump
+                //them to a different file. The extracted characters must be those with an ASCII code between 32 and
+                //127.
+
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+                int main()
+                {
+                    char array[95];
+                    FILE *file1,*file2;
+                    if((file1=fopen("d:\\text\\file1.txt","r")) != NULL)
+                    {
+                        while(!feof(file1))
+                        {
+                            fgets( array,95,file1);
+                        }
+                        fclose(file1);
+                        printf("%s",array);
+                    }
+                    else
+                        printf("could not open file1");
+
+                    if((file2=fopen("d:\\text\\file2","w")) != NULL)
+                    {
+                        int i=0;
+                        while( array[i]!= NULL)
+                        {
+                            if(array[i]>31 && array[i]&lt;128)
+                                fprintf(file2,"%c",array[i]);
+                            i++;
+                        }
+                        fclose(file2);
+                    }
+                    else
+                        printf("could not open file1");
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //3) Write a program that writes the values of x and x2
+                //to a text file, for x starting from 1 to 10.
+
+                #include &lt;stdio.h>
+                #include &lt;string.h>
+                int main()
+                {
+                    int array[10][2];
+                    FILE *file1;
+                    if((file1=fopen("d:\\text\\file1.txt","w")) != NULL)
+                    {
+                        fprintf(file1,"x   x2\n");
+                        for(int i=0 ;i&lt;10; i++)
+                        {
+                            for(int j=0 ;j&lt;2; j++)
+                            {
+                                if(j==0)
+                                {
+                                    array[i][j]=i+1;
+                                    fprintf(file1,"%02d  ",array[i][j]);
+                                }
+                                else
+                                {
+                                    array[i][j]=(i+1)*(i+1);
+                                    fprintf(file1,"%03d  ",array[i][j]);
+                                }
+                            }
+                            fprintf(file1,"\n");
+                        }
+                        fclose(file1);
+                        printf("success");
+                    }
+                    else
+                        printf("could not open file1");
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //4) Write a program that asks the user to enter his/her information (Id, Name, Grade) and stores it in
+                //an existing file named student.txt. If the file does not exist, it will be created. After the user has
+                //supplied his/her information, the program will print on the screen all of the student’s information
+                //available in the file.
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int main()
+                {
+                    typedef struct
+                    {
+                        int id;
+                        char name[30];
+                        int grade;
+                    }info;
+
+                    info information;
+                    FILE *file1;
+
+                    printf("enter your id: ");
+                    scanf("%d",&information.id);
+                    printf("enter your name: ");
+                    scanf("%s",information.name);
+                    printf("enter your grade: ");
+                    scanf("%d",&information.grade);
+
+                    if((file1=fopen("d:\\text\\student.txt","w")) != NULL)
+                    {
+                        fprintf(file1,"id:%d \nname:%s \ngrade:%d",information.id,information.name,information.grade);
+                        printf("id:%d \nname:%s \ngrade:%d",information.id,information.name,information.grade);
+                    }
+                    else
+                        printf("could not open file1");
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //5) Write a C program that copies a text file into another one after removing all of the empty lines.
+
+                #include&lt;stdio.h>
+                #include&lt;string.h>
+                int main()
+                {
+                    FILE *file1, *file2;
+                    char ch[100];
+                    file1=fopen("d:\\text\\file1.txt", "r");
+                    file2=fopen("d:\\text\\file2.txt", "w");
+                    if(file1==NULL || file2==NULL)
+                    {
+                        printf(" File does not found or error in opening");
+                        exit(1);
+                    }
+                    else
+                    {
+                        fgets(ch,100,file1);
+                        fputs(ch,file2);
+                        printf("success");
+                        fclose(file1);
+                        fclose(file2);
+                    }
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>

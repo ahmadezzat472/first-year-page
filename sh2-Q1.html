@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>sh2-Q1</title>
+</head>
+
+<body>
+    <div class="container">
+        <pre>
+            <code>
+                
+                //1) Write a C program that calculates the maximum, the minimum, and the average of 10 numbers
+                //entered by the user and stored in an array.
+                #include&lt;stdio.h&gt;
+
+                int main()
+                {
+                    int arr[10],max,min,sum=0; float av;
+                    for(int i=0 ; i&lt;10 ; i++)
+                    {
+                        printf("enter the number-%d: ",i+1);
+                        scanf("%d",&arr[i]);
+                        if(i==0)
+                        {
+                            max=arr[0];
+                            min=arr[0];
+                        }
+                        if(arr[i]>max)
+                            max=arr[i];
+                        else if(arr[i]&lt;min)
+                                min=arr[i];
+                        sum+=arr[i];
+                    }
+                    av=sum/10.0;
+                    printf("the average of 10 numbers is %.2f \nthe maximum value is %d \nthe minimum value value is %d",av,max,min);
+                    return 0;
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //2) Write a C function that checks if an array is in an ascending order.
+
+                //solution 1
+
+                #include &lt;stdio.h>
+                const int size;
+                void checksascending(int arr[],int size)
+                {
+                    int value,a;
+                    for(int i=0;i&lt;size;i++)
+                    {
+                        value=arr[i];
+                        if(arr[i+1]>value)
+                            a=1;
+                        else
+                        {
+                            printf("the array is not in an ascending");
+                            return;
+                        }
+                    }
+                    if(a==1)
+                        printf("the array is in an ascending");
+                }
+                int main()
+                {
+                    printf("enter the number(size) of array: ");
+                    scanf("%d",&size);
+                    int arr[size];
+                    for(int i=0;i&lt;size;i++)
+                    {
+                        printf("enter the number-%d: ",i+1);
+                        scanf("%d",&arr[i]);
+                    }
+                    checksascending(arr,size);
+                }
+
+                //solution 2
+
+                const int size;
+                void checksascending(int arr[],int size)
+                {
+                    int a=0;
+                    for(int i=0;i&lt;size-1;i++)
+                    {
+                        if(arr[i+1]>arr[i])
+                            a++;
+                        else
+                        {
+                            printf("the array is not in an ascending");
+                            return;
+                        }
+                    }
+                    if(a==size-1)
+                        printf("the array is in an ascending");
+
+                }
+                int main()
+                {
+                    printf("enter the number(size) of array: ");
+                    scanf("%d",&size);
+                    int arr[size];
+                    for(int i=0;i&lt;size;i++)
+                    {
+                        printf("enter the number-%d: ",i+1);
+                        scanf("%d",&arr[i]);
+                    }
+                    checksascending(arr,size);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //3) Write a C program that reads 10 integer numbers from the user, and then the program should
+                calculate the sum of the odd numbers, and the sum of the even numbers.
+                #include &lt;stdio.h>
+                int main()
+                {
+                    int a[10],sumeven=0,sumodd=0;
+                    for(int i ; i&lt;10 ; i++)
+                    {
+                        printf("enter the number-%d: ",i+1);
+                        scanf("%d",&a[i]);
+                        if(a[i]%2==0)
+                            sumeven+=a[i];
+                        else
+                            sumodd+=a[i];
+                    }
+                    printf("'the sum of the odd numbers is %d' and 'the sum of the even numbers is %d'",sumodd,sumeven);
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //4) Write a C program that asks the user to enter 10 integers in an array. The program will then
+                //display (based on the entered numbers) one of the following messages:
+                //● "the numbers in the array are increasing",
+                //● "the numbers in the array are decreasing",
+                //● "the numbers in the array are not changing", or
+                //● "the numbers in the array are increasing and then decreasing."
+                #include &lt;stdio.h>
+                void message();
+                int main()
+                {
+                    int a[5];
+                    for(int i=0 ; i&lt;5 ; i++)
+                    {
+                        printf("enter the number-%d: ",i+1);
+                        scanf("%d",&a[i]);
+                    }
+                    message(a,5);
+                }
+
+                void message(int a[],int size)
+                {
+                    int b=0;
+                    for(int i=0 ; i&lt;size-1 ; i++)
+                    {
+                        if(a[i+1]>a[i])
+                            b++;
+                        else if(a[i+1]==a[i])
+                        {
+                            b++;
+                            b--;
+                        }
+                        else if(a[i+1]&lt;a[i])
+                        {
+                            b++;
+                            b+=1;
+                        }
+                        else
+                            printf("the numbers in the array are increasing and then decreasing.");
+                    }
+                    if(b==size-1)
+                        printf("the numbers in the array are increasing");
+                    else if(b==0)
+                        printf("the numbers in the array are not changing");
+                    else if(b==(size-1)*2)
+                        printf("the numbers in the array are decreasing");
+                    else
+                        printf("the numbers in the array are increasing and then decreasing.");
+                }
+
+                //--------------------------------------------------------------------------------------------------
+
+                //5) Write a C program that reads a matrix (3🞨4), and asks the user to choose a number, and then
+                //displays the position of the selected number if found, otherwise it displays “number not found.”
+                #include &lt;stdio.h>
+                int main()
+                {
+                    int a[3][4],n,b;
+                    printf("reads a matrix (3*4): \n");
+                    for(int i=0; i&lt;3 ; i++)
+                    {
+                        for(int j=0; j&lt;4 ; j++)
+                        {
+                            printf("enter the number'%d-%d': ",i,j);
+                            scanf("%d",&a[i][j]);
+                        }
+                    }
+                    printf("choose a number: ");
+                    scanf("%d",&n);
+                    for(int i=0; i&lt;3 ; i++)
+                    {
+                        for(int j=0; j&lt;4 ; j++)
+                        {
+                            if(n==a[i][j])
+                            {
+                                b=1;
+                                printf("the position of the selected number is '%d-%d' \n",i,j);
+                            }
+                        }
+                    }
+                    if(b!=1)
+                        printf("number not found");
+                }
+
+            </code>
+        </pre>
+    </div>
+</body>
+</html>
