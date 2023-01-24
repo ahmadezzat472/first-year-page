@@ -148,6 +148,10 @@ section .container .all {
         align-items: center;
     }
 
+    section .container {
+        width: 90%;
+    }
+
 }
 
 section .container .all .haed {
